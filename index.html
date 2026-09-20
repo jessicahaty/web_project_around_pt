@@ -72,15 +72,23 @@
               class="popup__input popup__input_type_name"
               name="name"
               placeholder="Nome"
+              required
+              minlength="2"
+              maxlength="40"
               type="text"
             />
+            <span class="popup__input-error popup__input-error_type_name"></span>
             <input
               class="popup__input popup__input_type_description"
               name="description"
               placeholder="Sobre mim"
+              required
+              minlength="2"
+              maxlength="200"
               type="text"
             />
-            <button class="button popup__button" type="submit">Salvar</button>
+            <span class="popup__input-error popup__input-error_type_description"></span>
+            <button class="button popup__button" type="submit" disabled>Salvar</button>
           </form>
         </div>
       </div>
@@ -98,16 +106,20 @@
               name="place-name"
               placeholder="Título"
               required
+              minlength="2"
+              maxlength="30"
               type="text"
             />
+            <span class="popup__input-error popup__input-error_type_card-name"></span>
             <input
               class="popup__input popup__input_type_url"
               name="link"
-              placeholder="Link de Imagem"
+              placeholder="URL da Imagem"
               required
               type="url"
             />
-            <button class="button popup__button" type="submit">Criar</button>
+            <span class="popup__input-error popup__input-error_type_url"></span>
+            <button class="button popup__button" type="submit" disabled>Salvar</button>
           </form>
         </div>
       </div>
