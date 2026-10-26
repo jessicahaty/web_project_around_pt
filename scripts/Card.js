@@ -1,10 +1,9 @@
-import { handleOpenImageModal } from "./utils.js";
-
 export default class Card {
-  constructor({ name, link }, templateSelector) {
+  constructor({ name, link }, templateSelector, handleCardClick) {
     this._name = name || "Lugar sem nome";
     this._link = link || "./images/placeholder.jpg";
     this._template = templateSelector;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -12,7 +11,9 @@ export default class Card {
   }
 
   _setEventListeners() {
-    this._cardImage.addEventListener("click", handleOpenImageModal);
+    this._cardImage.addEventListener("click", () => {
+      this._handleCardClick(this._link, this._name);
+    });
     this._likeButton.addEventListener("click", this._handleLikeButton);
     this._deleteButton.addEventListener("click", this._handleDeleteCard);
   }
