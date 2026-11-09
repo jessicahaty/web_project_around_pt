@@ -29,7 +29,7 @@ Este projeto não precisa de instalação nem de dependências.
    ```
 
 2. Abra a pasta clonada.
-3. Abra o arquivo `index.html` no navegador.
+3. Abra `index.html` ou `src/index.html` no navegador. Ambos carregam a mesma aplicação.
 
 Para uma experiência de desenvolvimento melhor, use a extensão **Live Server** do VS Code para servir a página localmente.
 
@@ -49,7 +49,9 @@ Para uma experiência de desenvolvimento melhor, use a extensão **Live Server**
 ├── pages/        # Arquivo CSS principal
 ├── scripts/      # Lógica e interações da página
 ├── vendor/       # Normalização e fontes
-└── index.html    # Ponto de entrada da aplicação
+├── index.html    # Ponto de entrada da aplicação
+└── src/
+    └── index.html # Entrada alternativa esperada pela validação
 ```
 
 ## ♿ Interação e acessibilidade
