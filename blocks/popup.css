@@ -129,6 +129,24 @@
   padding: 0;
 }
 
+.popup__content_content_confirmation {
+  max-width: 430px;
+  min-height: 0;
+  padding: 34px 36px;
+}
+
+.popup__content_content_confirmation .popup__title {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.popup__content_content_confirmation .popup__button {
+  height: 40px;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 17px;
+}
+
 .popup__image {
   max-width: 100%;
   object-fit: cover;

@@ -18,7 +18,14 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img class="profile__image" src="./images/avatar.jpg" alt="Avatar" />
+          <div class="profile__avatar">
+            <img class="profile__image" src="./images/avatar.jpg" alt="Avatar" />
+            <button
+              aria-label="Alterar foto do perfil"
+              class="profile__avatar-edit-button"
+              type="button"
+            ></button>
+          </div>
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
             <button
@@ -92,6 +99,27 @@
           </form>
         </div>
       </div>
+      <div class="popup" id="avatar-popup">
+        <div class="popup__content">
+          <button
+            aria-label="Fechar pop-up"
+            class="popup__close"
+            type="button"
+          ></button>
+          <h3 class="popup__title">Alterar a foto do perfil</h3>
+          <form class="popup__form" id="avatar-form">
+            <input
+              class="popup__input popup__input_type_avatar"
+              name="avatar"
+              placeholder="URL da imagem"
+              required
+              type="url"
+            />
+            <span class="popup__input-error popup__input-error_type_avatar"></span>
+            <button class="button popup__button" type="submit" disabled>Salvar</button>
+          </form>
+        </div>
+      </div>
       <div class="popup" id="new-card-popup">
         <div class="popup__content">
           <button
@@ -132,6 +160,17 @@
           ></button>
           <img alt="" class="popup__image" src="#" />
           <p class="popup__caption"></p>
+        </div>
+      </div>
+      <div class="popup" id="delete-popup">
+        <div class="popup__content popup__content_content_confirmation">
+          <button
+            aria-label="Fechar pop-up"
+            class="popup__close"
+            type="button"
+          ></button>
+          <h3 class="popup__title">Tem certeza?</h3>
+          <button class="button popup__button" type="button">Sim</button>
         </div>
       </div>
     </div>

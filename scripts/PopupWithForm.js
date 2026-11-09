@@ -22,10 +22,19 @@ export default class PopupWithForm extends Popup {
 
   setEventListeners() {
     super.setEventListeners();
-    this._form.addEventListener("submit", (evt) => {
+    this._form.addEventListener("submit", async (evt) => {
       evt.preventDefault();
       if (this._form.checkValidity()) {
-        this._handleFormSubmit(this._getInputValues());
+        const submitButtonText = this._submitButton.textContent;
+        this._submitButton.textContent = "Salvando...";
+        this._submitButton.disabled = true;
+
+        try {
+          await this._handleFormSubmit(this._getInputValues());
+        } finally {
+          this._submitButton.textContent = submitButtonText;
+          this._submitButton.disabled = !this._form.checkValidity();
+        }
       }
     });
   }
