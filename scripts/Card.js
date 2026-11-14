@@ -1,7 +1,7 @@
 export default class Card {
   constructor(
     { _id, name, link, isLiked, canDelete },
-    templateSelector,
+    templateElement,
     handleCardClick,
     handleLikeClick,
     handleDeleteClick,
@@ -11,14 +11,14 @@ export default class Card {
     this._link = link || "./images/placeholder.jpg";
     this._isLiked = isLiked;
     this._canDelete = canDelete;
-    this._template = templateSelector;
+    this._templateElement = templateElement;
     this._handleCardClick = handleCardClick;
     this._handleLikeClick = handleLikeClick;
     this._handleDeleteClick = handleDeleteClick;
   }
 
   _getTemplate() {
-    return this._template.content.querySelector(".card").cloneNode(true);
+    return this._templateElement.content.querySelector(".card").cloneNode(true);
   }
 
   _setEventListeners() {

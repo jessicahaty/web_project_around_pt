@@ -10,7 +10,7 @@ import UserInfo from "./UserInfo.js";
 const api = new Api({
   baseUrl: "https://around-api.pt-br.tripleten-services.com/v1",
   headers: {
-    authorization: "c56e30dc-2883-4270-a59e-b2f7bae969c6",
+    authorization: "12468150-305a-4231-a340-9f88aa25f14f",
     "Content-Type": "application/json",
   },
 });
@@ -118,6 +118,7 @@ const avatarPopup = new PopupWithForm("#avatar-popup", async (inputValues) => {
   try {
     const userData = await api.editAvatar(inputValues.avatar);
     profileImage.src = userData.avatar;
+    profileImage.alt = `Avatar de ${userData.name}`;
     avatarPopup.close();
   } catch (error) {
     console.error("Não foi possível atualizar a foto do perfil.", error);
